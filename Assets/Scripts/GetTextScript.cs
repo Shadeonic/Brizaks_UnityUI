@@ -19,9 +19,8 @@ public class GetTextScript : MonoBehaviour
         randText = Random.Range(0, textArray.Length);
         playerName = inputFieldN.GetComponent<Text>().text;
         playerAge = inputFieldA.GetComponent<Text>().text;
-        bool isNumber = int.TryParse(playerAge, out int intAge);
-        if(!isNumber || intAge>2025 || intAge<1900 || playerName.Length==0){
-            TextField.GetComponent<Text>().text = "Nekorekti ievadīts gads un/vai vārds!";
+        if(intAge>2025 || intAge<1900 || playerName.Length==0){
+            TextField.GetComponent<Text>().text = "Invalid player name or year!";
         }
         else{
             TextField.GetComponent<Text>().text = textArray[randText] + " "+ playerName+" ir "+(2025-intAge) + " gadu(s) vecs!";

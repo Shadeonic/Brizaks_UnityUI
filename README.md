@@ -4,8 +4,8 @@ Projekts, kurā var apģērbt terraria tēlu izvēlētajās bruņās.
 **Darāmo darbu saraskts:**
 - [x] Pievienot bacground abām ainām
 - [x] Pievienot fona mūziku abām ainām
-- [ ] Pievienot spēles beigšanas pogu un iespēju pāriet starp ainām
-- [ ] Pievienot iespēju izvēlēties vienu no diviem tēliem
+- [x] Pievienot spēles beigšanas pogu un iespēju pāriet starp ainām
+- [x] Pievienot iespēju izvēlēties vienu no diviem tēliem
 - [ ] Pievieto apģerbju (bruņu veidus/izvēles)
 - [ ] Pievienot iespēju mainīt gan tēlu, gan bruņu lielumu
 - [ ] Pievienot iespēju vilkt bruņas
