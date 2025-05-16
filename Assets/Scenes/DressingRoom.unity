@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12652443, g: 0.13378981, b: 0.31935734, a: 1}
+  m_IndirectSpecularColor: {r: 0.12652433, g: 0.1337898, b: 0.31935734, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -320,8 +320,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1404690787}
   m_HandleRect: {fileID: 1404690786}
   m_Direction: 2
-  m_Value: -0.000009015846
-  m_Size: 0.64366335
+  m_Value: 1
+  m_Size: 0.25063184
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2990,6 +2990,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b058cd67b7dba9c48a5198522ceafb0e, type: 3}
   HeightSlider: {fileID: 1343153364}
   WidthSlider: {fileID: 1653140168}
+  scrollViewContent: {fileID: 2011637259}
 --- !u!1 &1363172858
 GameObject:
   m_ObjectHideFlags: 0
@@ -4586,6 +4587,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2011637260}
+  - component: {fileID: 2011637262}
+  - component: {fileID: 2011637261}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -4609,9 +4612,57 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00005340576, y: 106.62466}
-  m_SizeDelta: {x: 0, y: 300}
+  m_AnchoredPosition: {x: 0.00005340576, y: -0.000091552734}
+  m_SizeDelta: {x: -0.00012207, y: 771.5548}
   m_Pivot: {x: 0, y: 1}
+--- !u!114 &2011637261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011637259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: c33498331beb9b742889284199eda6e7, type: 3}
+    m_FontSize: 30
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 30
+    m_MaxSize: 45
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "I've spent years mastering the art of survival in this unpredictable world.
+    Whether I'm exploring deep caverns or battling hordes of zombies at dusk, I never
+    back down. My armor may be dented, and my sword might be chipped, but every scar
+    tells a story. Treasure hunting fuels my spirit, and the sound of crafting new
+    gear is my anthem. If you're looking for a fearless companion who thrives in
+    danger, I'm your guy. Just don't expect me to build a house\u2014I prefer the
+    thrill of adventure over settling down!"
+--- !u!222 &2011637262
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011637259}
+  m_CullTransparentMesh: 1
 --- !u!1 &2025914553
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class GetTextScript : MonoBehaviour
 {
     string playerName;
-    string playerAge;
     int intAge;
     public string[] textArray = {"Terraria tēls ", "Spēlētājs ", "Varonis "};
     int randText;
@@ -18,8 +17,8 @@ public class GetTextScript : MonoBehaviour
     {
         randText = Random.Range(0, textArray.Length);
         playerName = inputFieldN.GetComponent<Text>().text;
-        playerAge = inputFieldA.GetComponent<Text>().text;
-        if(intAge>2025 || intAge<1900 || playerName.Length==0){
+        intAge = int.Parse(inputFieldA.GetComponent<Text>().text);
+        if (intAge>2025 || intAge<1900 || playerName.Length==0){
             TextField.GetComponent<Text>().text = "Invalid player name or year!";
         }
         else{
