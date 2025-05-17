@@ -8,10 +8,8 @@ public class DragScript : MonoBehaviour, IBeginDragHandler,
     private RectTransform rectTransform;
     public Canvas canva;
     private CanvasGroup canvasGroup;
-    public ObjectScript objectScript;
-
-    public ImageScript imageScript;
-
+    public ImageScript ImageScript;
+    
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -22,7 +20,7 @@ public class DragScript : MonoBehaviour, IBeginDragHandler,
     {
         if (Input.GetMouseButton(0) && Input.GetMouseButton(2) == false)
         {
-            objectScript.lastDragged = null;
+            ImageScript.lastDragged = null;
             Debug.Log("Begin Drag: " + gameObject.name);
             canvasGroup.alpha = 0.6f;
             rectTransform.SetSiblingIndex(50);
@@ -50,10 +48,10 @@ public class DragScript : MonoBehaviour, IBeginDragHandler,
         if (Input.GetMouseButtonUp(0))
         {
             Debug.Log("Dragging ended: " + gameObject.name);
-            objectScript.lastDragged = eventData.pointerDrag;
+            ImageScript.lastDragged = eventData.pointerDrag;
             canvasGroup.alpha = 1f;
             //Atjaunina slaideri
-            imageScript.UpdateSliders();
+            ImageScript.UpdateSliders();
         }
     }
 }

@@ -38,7 +38,7 @@ public class ImageScript : MonoBehaviour
     //Komponentes, kas atbilda par bruņu lielumu
     public GameObject HeightSliderArmor;
     public GameObject WidthSliderArmor;
-    public ObjectScript objectScript;
+    public GameObject lastDragged = null;
 
     //Pielieto vīrieša tēla mūziku, tikko sākās speles skats
     private void Start()
@@ -67,31 +67,31 @@ public class ImageScript : MonoBehaviour
     //Maina augstumu
     public void ChangeHeightArmor()
     {
-        if (objectScript.lastDragged != null)
+        if (lastDragged != null)
         {
             float currentHeight = HeightSliderArmor.GetComponent<Slider>().value;
-            Vector2 newScale = objectScript.lastDragged.transform.localScale;
+            Vector2 newScale = lastDragged.transform.localScale;
             newScale.y = currentHeight; 
-            objectScript.lastDragged.transform.localScale = newScale;
+            lastDragged.transform.localScale = newScale;
         }
     }
     
     //Maina platumu
     public void ChangeWidthArmor()
     {
-        if (objectScript.lastDragged != null)
+        if (lastDragged != null)
         {
             float currentWidth = WidthSliderArmor.GetComponent<Slider>().value;
-            Vector2 newScale = objectScript.lastDragged.transform.localScale;
+            Vector2 newScale = lastDragged.transform.localScale;
             newScale.x = currentWidth; 
-            objectScript.lastDragged.transform.localScale = newScale;
+            lastDragged.transform.localScale = newScale;
         }
     }
 
     //Dropdows, kas nomaina tēlu, aprakstu un mūziku
     public void Dropdown (int index)
     {
-        if (index == 0)
+        if (index == 0)//vīrietis
         {
             imageField.GetComponent<Image>().sprite = spriteArray[0];
             scrollViewContent.GetComponent<Text>().text = "I've spent years mastering the art of survival in this unpredictable world. " +
@@ -102,7 +102,7 @@ public class ImageScript : MonoBehaviour
             audioScriptCharacter.audioClips = audioClipsBoy;
             }
 
-        else if (index == 1)
+        else if (index == 1)//sieviete
         {
             imageField.GetComponent<Image>().sprite = spriteArray[1];
             scrollViewContent.GetComponent<Text>().text = "Magic flows through my veins like the wind through the trees. Ever since I uncovered" +
@@ -145,10 +145,10 @@ public class ImageScript : MonoBehaviour
 
     public void UpdateSliders()
     {
-        if (objectScript.lastDragged != null)
+        if (lastDragged != null)
         {
             // Iegūst pēdējā priekšmeta lieklumu
-            Vector2 currentScale = objectScript.lastDragged.transform.localScale;
+            Vector2 currentScale = lastDragged.transform.localScale;
 
             // Atjaunina slaideri, kas atbilst esošam priekšmetam
             HeightSliderArmor.GetComponent<Slider>().value = currentScale.y;
