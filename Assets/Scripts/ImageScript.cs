@@ -15,6 +15,15 @@ public class ImageScript : MonoBehaviour
     public GameObject WidthSlider;
     public GameObject scrollViewContent;
 
+    public AudioScriptCharacter audioScriptCharacter; // Reference to audio script
+    public AudioClip[] audioClipsBoy;  // Sounds for "boy"
+    public AudioClip[] audioClipsGirl; // Sounds for "girl"
+
+    private void Start()
+    {
+        audioScriptCharacter.audioClips = audioClipsBoy; // Default to boy sounds (or girl, depending on your setup)
+    }
+
     public void ChangeHeight()
     {
         float currentHeight = HeightSlider.GetComponent<Slider>().value;
@@ -39,9 +48,11 @@ public class ImageScript : MonoBehaviour
             scrollViewContent.GetComponent<Text>().text = "I've spent years mastering the art of survival in this unpredictable world. " +
                 "Whether I'm exploring deep caverns or battling hordes of zombies at dusk, I never back down. My armor may be dented, and " +
                 "my sword might be chipped, but every scar tells a story. Treasure hunting fuels my spirit, and the sound of crafting new gear " +
-                "is my anthem. If you're looking for a fearless companion who thrives in danger, I'm your guy. Just don't expect me to build a house—I " +
+                "is my anthem. If you're looking for a fearless companion who thrives in danger, I'm your guy. Just don't expect me to build a house I " +
                 "prefer the thrill of adventure over settling down!";
-        }
+            // Set correct sound list
+            audioScriptCharacter.audioClips = audioClipsBoy;
+            }
 
         else if (index == 1)
         {
@@ -50,8 +61,10 @@ public class ImageScript : MonoBehaviour
                 " my first enchanted staff, I knew my destiny was to harness the elements and explore the world beyond the surface. Whether soaring" +
                 " through the skies or delving into ancient ruins, my curiosity knows no bounds. I believe every hidden chest holds a story, every" +
                 " spell whispers a secret, and every challenge is a step toward greatness. I might look peaceful in my floating island retreat, but" +
-                " make no mistake—when battle calls, the stars themselves answer my command.";
-        }
+                " make no mistake when battle calls, the stars themselves answer my command.";
+           audioScriptCharacter.audioClips = audioClipsGirl;
+           }
+           audioScriptCharacter.StopSound();
     }
 
     // public void ToggleBean(bool value)

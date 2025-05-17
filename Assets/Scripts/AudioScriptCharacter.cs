@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BeanAudioScript : MonoBehaviour
+public class AudioScriptCharacter : MonoBehaviour
 {
     public AudioSource audioSource;
     public AudioClip[] audioClips;

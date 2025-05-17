@@ -17,12 +17,16 @@ public class GetTextScript : MonoBehaviour
     {
         randText = Random.Range(0, textArray.Length);
         playerName = inputFieldN.GetComponent<Text>().text;
+        if (!string.IsNullOrEmpty(inputFieldA.GetComponent<Text>().text)){
         intAge = int.Parse(inputFieldA.GetComponent<Text>().text);
         if (intAge>2025 || intAge<1900 || playerName.Length==0){
             TextField.GetComponent<Text>().text = "Invalid player name or year!";
         }
         else{
             TextField.GetComponent<Text>().text = textArray[randText] + " "+ playerName+" ir "+(2025-intAge) + " gadu(s) vecs!";
+        }
+        }else{
+            TextField.GetComponent<Text>().text = "Invalid player name or year!";
         }
     }
 }
