@@ -5,25 +5,40 @@ using UnityEngine.UI;
 
 public class ImageScript : MonoBehaviour
 {
-    public GameObject boy;
-    public GameObject girl;
-    public GameObject left;
-    public GameObject right;
+    //Komponentes, kas atbilda par bruņām
+    //Daedalus bruņas
+    public GameObject DaedHelm;
+    public GameObject DaedPlate;
+    public GameObject DaedLeg;
+    //God bruņas
+    public GameObject GodHelm;
+    public GameObject GodPlate;
+    public GameObject GodLeg;
+    //StarDust bruņas
+    public GameObject StarHelm;
+    public GameObject StarPlate;
+    public GameObject StarLeg;
+    //Zobeņi
+    public GameObject Sword1;
+    public GameObject Sword2;
+    public GameObject Sword3;
+
+    //Komponentes, kas atbilda par character
     public GameObject imageField;
     public Sprite[] spriteArray;
     public GameObject HeightSlider;
     public GameObject WidthSlider;
     public GameObject scrollViewContent;
-
+    //Komponentes, kas atbilda par mūziku atbilstošam character
     public AudioScriptCharacter audioScriptCharacter; // Reference to audio script
     public AudioClip[] audioClipsBoy;  // Sounds for "boy"
     public AudioClip[] audioClipsGirl; // Sounds for "girl"
-
+    //Pielieto vīrieša tēla mūziku, tikko sākās speles skats
     private void Start()
     {
         audioScriptCharacter.audioClips = audioClipsBoy; // Default to boy sounds (or girl, depending on your setup)
     }
-
+    //Maina augstumu
     public void ChangeHeight()
     {
         float currentHeight = HeightSlider.GetComponent<Slider>().value;
@@ -31,7 +46,7 @@ public class ImageScript : MonoBehaviour
         newScale.y = currentHeight; // Modify only the height
         imageField.transform.localScale = newScale;
     }
-
+    //Maina platumu
     public void ChangeWidth()
     {
         float currentHeight = WidthSlider.GetComponent<Slider>().value;
@@ -39,7 +54,7 @@ public class ImageScript : MonoBehaviour
         newScale.x = currentHeight; // Modify only the height
         imageField.transform.localScale = newScale;
     }
-
+    //Dopdows, kas nomaina tēlu, aprakstu un mūziku
     public void Dropdown (int index)
     {
         if (index == 0)
@@ -67,27 +82,35 @@ public class ImageScript : MonoBehaviour
            audioScriptCharacter.StopSound();
     }
 
-    // public void ToggleBean(bool value)
-    // {
-    //     bean.SetActive(value);
-    //     left.GetComponent<Toggle>().interactable = value;
-    //     right.GetComponent<Toggle>().interactable = value;
-    // }
+    public void ToggleDaedalus(bool value)
+    {
+        DaedHelm.SetActive(value);
+        DaedPlate.SetActive(value);
+        DaedLeg.SetActive(value);
+        // left.GetComponent<Toggle>().interactable = value;
+        // right.GetComponent<Toggle>().interactable = value;
+    }
 
-    // public void ToggleTeddy(bool value)
-    // {
-    //     teddy.SetActive(value);
-    // }
+    public void ToggleGod(bool value)
+    {
+        GodHelm.SetActive(value);
+        GodPlate.SetActive(value);
+        GodLeg.SetActive(value);
+    }
 
-    // public void ToggleCar(bool value)
-    // {
-    //     car.SetActive(value);
-    // }
+    public void ToggleStardust(bool value)
+    {
+        StarHelm.SetActive(value);
+        StarPlate.SetActive(value);
+        StarLeg.SetActive(value);
+    }
 
-    // public void ToggleLady(bool value)
-    // {
-    //     lady.SetActive(value);
-    // }
+    public void ToggleSword(bool value)
+    {
+        Sword1.SetActive(value);
+        Sword2.SetActive(value);
+        Sword3.SetActive(value);
+    }
 
     // public void ToLeft()
     // {
