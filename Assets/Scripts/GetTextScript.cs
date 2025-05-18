@@ -17,15 +17,20 @@ public class GetTextScript : MonoBehaviour
     {
         randText = Random.Range(0, textArray.Length);
         playerName = inputFieldN.GetComponent<Text>().text;
+        //ja gada lauks nav tukšs
         if (!string.IsNullOrEmpty(inputFieldA.GetComponent<Text>().text)){
         intAge = int.Parse(inputFieldA.GetComponent<Text>().text);
+        //ierobežojumi, lai parādītu
         if (intAge>2025 || intAge<1900 || playerName.Length==0){
+            //ja nav izpildīti prasījumi - kļūda
             TextField.GetComponent<Text>().text = "Invalid player name or year!";
         }
         else{
+            //izpildīti visi prasījumi
             TextField.GetComponent<Text>().text = textArray[randText] + " "+ playerName+" ir "+(2025-intAge) + " gadu(s) vecs!";
         }
         }else{
+            //ja nav izpildīti prasījumi ar gadu - kļūda
             TextField.GetComponent<Text>().text = "Invalid player name or year!";
         }
     }
